@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Dragon Ball Z Saga de Majin Boo OST 1.mp3-c8f62c330b7b174059bb9807ae2768f5.mp3str"
+
+[deps]
+
+source_file="res://gui/screens/settings/scenes/Dragon Ball Z Saga de Majin Boo OST 1.mp3"
+dest_files=[ "res://.import/Dragon Ball Z Saga de Majin Boo OST 1.mp3-c8f62c330b7b174059bb9807ae2768f5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

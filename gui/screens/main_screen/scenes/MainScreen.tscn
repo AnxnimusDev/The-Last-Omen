@@ -1,0 +1,185 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://gui/screens/main_screen/scripts/MainScreen.gd" type="Script" id=1]
+[ext_resource path="res://gui/screens/main_screen/assets/GUI.png" type="Texture" id=2]
+[ext_resource path="res://gui/screens/main_screen/fonts/MinimalPixel v2.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://gui/screens/main_screen/assets/1.png" type="Texture" id=4]
+[ext_resource path="res://gui/screens/main_screen/assets/2.png" type="Texture" id=5]
+[ext_resource path="res://gui/screens/main_screen/assets/4.png" type="Texture" id=6]
+[ext_resource path="res://gui/screens/main_screen/assets/3.png" type="Texture" id=7]
+[ext_resource path="res://music/xDeviruchi - The Icy Cave .wav" type="AudioStream" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 31
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 14
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 2 )
+region_rect = Rect2( 145, 113, 46, 14 )
+modulate_color = Color( 0.298039, 0.866667, 0.2, 1 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 2 )
+region_rect = Rect2( 145, 98, 46, 13 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 2 )
+region_rect = Rect2( 145, 81, 46, 14 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 14
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 2 )
+region_rect = Rect2( 145, 113, 46, 14 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 2 )
+region_rect = Rect2( 145, 98, 46, 13 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 2 )
+region_rect = Rect2( 145, 81, 46, 14 )
+
+[node name="MainScreen" type="Control"]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -960.0
+margin_top = -540.0
+margin_right = 960.0
+margin_bottom = 540.0
+rect_pivot_offset = Vector2( 102, 366 )
+script = ExtResource( 1 )
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -140.5
+margin_top = -155.0
+margin_right = 140.5
+margin_bottom = 155.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 100, 100 )
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 71.0
+margin_right = 292.0
+margin_bottom = 170.0
+custom_fonts/font = SubResource( 1 )
+text = "THE LAST OMEN
+
+"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 174.0
+margin_right = 292.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 30, 50 )
+custom_constants/separation = 20
+alignment = 1
+
+[node name="RegisterBtn" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 33.0
+margin_top = 5.0
+margin_right = 139.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 100, 40 )
+size_flags_horizontal = 4
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 8 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 4 )
+text = "   REGISTER   "
+
+[node name="LoginBtn" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 159.0
+margin_top = 5.0
+margin_right = 259.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 100, 40 )
+size_flags_horizontal = 4
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 9 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 7 )
+text = "    LOG IN    "
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+modulate = Color( 1, 1, 1, 0.00392157 )
+margin_top = 228.0
+margin_right = 292.0
+margin_bottom = 238.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="Sprite" type="Sprite" parent="VBoxContainer"]
+position = Vector2( -55, -58 )
+scale = Vector2( 8.886, 9.75 )
+z_index = -1
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 2, 34, 44, 44 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Layer1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Layer1"]
+scale = Vector2( 3.33333, 3.33333 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Layer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/Layer2"]
+position = Vector2( -5.00003, -7.00003 )
+scale = Vector2( 3.34549, 3.33642 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Layer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/Layer3"]
+scale = Vector2( 3.33333, 3.33333 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Layer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/Layer4"]
+scale = Vector2( 3.33333, 3.33333 )
+texture = ExtResource( 6 )
+centered = false
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/RegisterBtn" to="." method="_on_RegisterBtn_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/LoginBtn" to="." method="_on_LoginBtn_pressed"]

@@ -1,0 +1,144 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://gui/screens/settings/fonts/MinimalPixel v2.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://gui/screens/settings/input_menu/input_line/scripts/InputLine.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_size = 3
+outline_color = Color( 0.0980392, 0.215686, 0.427451, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_space = 10
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0431373, 0.141176, 0.278431, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.341176, 0.423529, 0.737255, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_char = 5
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.647059, 0.815686, 0.909804, 1 )
+border_width_bottom = 5
+border_color = Color( 0.341176, 0.423529, 0.737255, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 15.0
+expand_margin_right = 15.0
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id=7]
+content_margin_top = 5.0
+bg_color = Color( 0.647059, 0.815686, 0.909804, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 15.0
+expand_margin_right = 15.0
+expand_margin_top = 5.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id=8]
+border_width_bottom = 5
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 15.0
+expand_margin_right = 15.0
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.341176, 0.423529, 0.737255, 1 )
+border_width_bottom = 5
+border_color = Color( 0.0980392, 0.215686, 0.427451, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 15.0
+expand_margin_right = 15.0
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[node name="InputLine" type="HBoxContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -635.0
+margin_top = -31.0
+margin_right = 545.0
+margin_bottom = 18.0
+script = ExtResource( 2 )
+
+[node name="Action" type="Label" parent="."]
+margin_top = 9.0
+margin_right = 390.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0.647059, 0.843137, 0.909804, 1 )
+custom_constants/shadow_offset_y = 5
+custom_fonts/font = SubResource( 1 )
+text = "JUMP"
+
+[node name="Key" type="Label" parent="."]
+margin_left = 394.0
+margin_top = 7.0
+margin_right = 785.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 0.647059, 0.843137, 0.909804, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "W KEY"
+align = 1
+
+[node name="Change" type="Button" parent="."]
+margin_left = 1028.0
+margin_top = 7.0
+margin_right = 1180.0
+margin_bottom = 42.0
+size_flags_horizontal = 10
+size_flags_vertical = 4
+custom_colors/font_color_focus = Color( 0.0980392, 0.215686, 0.427451, 1 )
+custom_colors/font_color = Color( 0.0980392, 0.215686, 0.427451, 1 )
+custom_colors/font_color_hover = Color( 0.341176, 0.423529, 0.737255, 1 )
+custom_colors/font_color_pressed = Color( 0.341176, 0.423529, 0.737255, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 6 )
+text = "CHANGE"
+align = 0
+
+[connection signal="pressed" from="Change" to="." method="_on_Change_pressed"]
